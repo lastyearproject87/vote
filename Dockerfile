@@ -1,12 +1,12 @@
 # Using official python runtime base image
-FROM python:2.7-slim
+FROM python:alpine
 
 # Set the application directory
 WORKDIR /usr/src/app
 
 # Install our requirements.txt
 ADD requirements.txt requirements.txt
-RUN pip install requirements.txt
+RUN pip install -r requirements.txt
 
 # Copy our code from the current folder to /app inside the container
 ADD . /usr/src/app
